@@ -3,7 +3,7 @@ kind: PipelineRun
 metadata:
   generateName: wiki-pipelinerun-
 spec:
-  serviceAccount: kbaig
+  serviceAccount: pipeline
   pipelineRef:
     name: cicd-pipeline
   resources:
