@@ -16,7 +16,7 @@ spec:
         app: wiki
     spec:
       containers:
-      - image: quay.io/khrm/wiki
+      - image: docker.io/hriships/wiki
         name: wiki
         ports:
         - containerPort: 8080
