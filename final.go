@@ -69,7 +69,7 @@ func renderTemplate(w http.ResponseWriter, tmpl string, p *Page) {
 	}
 }
 
-var validPath = regexp.MustCompile("^/(edit|save|view)/([a-zA-Z0-9]+)$")
+var validPath = regexp.MustCompile("^/wiki/(edit|save|view)/([a-zA-Z0-9]+)$")
 
 func makeHandler(fn func(http.ResponseWriter, *http.Request, string)) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
@@ -83,9 +83,9 @@ func makeHandler(fn func(http.ResponseWriter, *http.Request, string)) http.Handl
 }
 
 func main() {
-	http.HandleFunc("wiki/view/", makeHandler(viewHandler))
-	http.HandleFunc("wiki/edit/", makeHandler(editHandler))
-	http.HandleFunc("wiki/save/", makeHandler(saveHandler))
+	http.HandleFunc("/wiki/view/", makeHandler(viewHandler))
+	http.HandleFunc("/wiki/edit/", makeHandler(editHandler))
+	http.HandleFunc("/wiki/save/", makeHandler(saveHandler))
 
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }
