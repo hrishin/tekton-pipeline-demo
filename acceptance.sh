@@ -7,8 +7,8 @@ fi
 ./main &
 PROC_ID=$!
 
-curl 'http://localhost:8080/save/doc'
-curl 'http://localhost:8080/save/doc'  -H 'Content-Type: application/x-www-form-urlencoded'    --data 'body=hellotestbenchwashere'
+curl 'http://localhost:8080/wiki/save/doc'
+curl 'http://localhost:8080/wiki/save/doc'  -H 'Content-Type: application/x-www-form-urlencoded'    --data 'body=hellotestbenchwashere'
 
 acceptedRate=1000
 
